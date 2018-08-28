@@ -13,7 +13,7 @@ class Home extends Component {
     description: [{}]
   }
   
-  changeInterface = () => {
+  togglePage = () => {
     const {showButton, showDescription} = this.state
     this.setState({
       showButton: showButton ? false : true,
@@ -23,13 +23,16 @@ class Home extends Component {
 
   handleClick = () => {
     try {
-      this.setState({isLoading: true})
+      this.setState({
+        isLoading: true,
+        showButton: false
+      })
       fetchRandom().then( res => {
         this.setState({
           isLoading: false,
+          showDescription: true,
           description: res.data
         })
-        this.changeInterface()
       })
     } catch (error) {
       console.log(`Fetch random error: ${error}`)
@@ -42,8 +45,7 @@ class Home extends Component {
       <div>
         {isLoading && <Loading />}
         <PrimaryButton onClick={this.handleClick} isShow={showButton}>Lets do Lunch!</PrimaryButton>
-        <Description data={description} isShow={showDescription} />
-        {/* Adicionar botao para zerar */}
+        <Description data={description} isShow={showDescription} togglePage={this.togglePage}/>
       </div>
     );
   }
