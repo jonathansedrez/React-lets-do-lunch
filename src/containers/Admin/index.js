@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-import {fetchRestaurants} from '../../api';
+import Body from './styled';
+import api from '../../api';
 import Loading from '../../components/Loading';
 import Table from './Table';
+import AddButton from './AddButton';
 
 class Admin extends Component {    
   state = {
@@ -13,7 +15,7 @@ class Admin extends Component {
   
   componentDidMount() {
     try {
-      fetchRestaurants().then( res => {
+      api.fetchRestaurants().then( res => {
         this.setState({
           isLoading: false,
           showTable: true,
@@ -28,7 +30,10 @@ class Admin extends Component {
   render() {
     const {data} = this.state.rows    
     return (
-      data ? <Table data={data} /> : <Loading />
+      <Body>
+        <AddButton />
+        {data ? <Table data={data} /> : <Loading />}
+      </Body>
     )
   }
 }

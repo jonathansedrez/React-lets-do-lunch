@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import {Menu, MenuLink} from './styled';
+import {Menu, Home, Admin} from './styled';
 
 class Header extends Component {
   render() { 
     return (
       <Menu>
-        <MenuLink to="/">Home</MenuLink>
-        <MenuLink to="admin">Admin</MenuLink>
+        <Home to="/">Home</Home>
+        <Admin to="admin">Admin</Admin>
       </Menu>
     );
   }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
+import Bg from './styled';
 import PrimaryButton from './PrimaryButton';
 import Description from './Description';
-import {fetchRandom} from '../../api';
+import api from '../../api';
 import Loading from '../../components/Loading';
 
 class Home extends Component {
@@ -27,7 +28,7 @@ class Home extends Component {
         isLoading: true,
         showButton: false
       })
-      fetchRandom().then( res => {
+      api.fetchRandom().then( res => {
         this.setState({
           isLoading: false,
           showDescription: true,
@@ -42,11 +43,11 @@ class Home extends Component {
   render() { 
     const {showButton, showDescription, isLoading, description} = this.state
     return (
-      <div>
+      <Bg>
         {isLoading && <Loading />}
-        <PrimaryButton onClick={this.handleClick} isShow={showButton}>Lets do Lunch!</PrimaryButton>
-        <Description data={description} isShow={showDescription} togglePage={this.togglePage}/>
-      </div>
+          <PrimaryButton onClick={this.handleClick} isShow={showButton}>Lets do Lunch!</PrimaryButton>
+          <Description data={description} isShow={showDescription} togglePage={this.togglePage}/>
+      </Bg>
     );
   }
 }

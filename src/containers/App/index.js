@@ -4,17 +4,18 @@ import { Router } from '@reach/router';
 import Home from '../Home';
 import Admin from '../Admin';
 import Header from '../../components/Header';
+import Wrapper from './styled';
 
 class App extends Component {
   render() { 
     return (
-      <div>
+      <Wrapper>
         <Header /> 
         <Router>
           <Home path='/'/>
           <Admin path='admin'/>
         </Router>
-      </div>
+      </Wrapper>
     );
   }
 }

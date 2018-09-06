@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 
-import Td from './styled';
+import { TableRest, Td, TdAddress, TdAmount, TdButtons, Id} from './styled';
+import DeleteButton from './DeleteButton';
+import EditButton from './EditButton';
 
 class Table extends Component {
-  state = {
-    visible: false
-  }
-
-  handleHover = () => {
-    this.setState({visible: true})    
-  }
-
   render() {    
     const {data} = this.props
     return (
-      <table>
+      <TableRest>
         <thead>
           <tr>
             <th>Nome</th>
@@ -26,21 +20,20 @@ class Table extends Component {
         <tbody>
           {data.map( row => {
             return (
-              // Tem como eu passar a key dentro do mouseOver e mostrar apenas a tr com a key identificada?
-              <tr key={row._id} onMouseOver={this.handleHover}>
-                {/* <td>{row._id}</td> */}
-                <td>{row.name}</td>
-                <td>{row.amount}</td>
-                <td>{row.address}</td>
-                <Td isShow={this.state.visible}>
-                  <button>edit</button>
-                  <button>delete</button>
-                </Td>
+              <tr key={row._id}>
+                <Id>{row._id}</Id>
+                <Td>{row.name}</Td>
+                <TdAmount>{row.amount}</TdAmount>
+                <TdAddress>{row.address}</TdAddress>
+                <TdButtons>
+                  <EditButton />
+                  <DeleteButton />
+                </TdButtons>
               </tr>
             )}
           )}
         </tbody>
-      </table>
+      </TableRest>
     )
   }
 }
