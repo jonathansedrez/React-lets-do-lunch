@@ -4,11 +4,11 @@ export const TableRest = styled.table`
   margin: 0 auto;
   border-collapse: separate;
   border-spacing: 5px;
-  overflow: scroll;  
 `
 
 export const Td = styled.td`
   box-shadow: 1px 1px 5px grey;
+  background-color: #fff;
   border-radius: 15px;
   padding: 0px 15px;
   text-align: center;

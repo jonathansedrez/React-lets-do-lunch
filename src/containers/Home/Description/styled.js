@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   border: 1px solid #bf3939;
   box-shadow: 0px 0px 25px black;
 `
-export const Title = styled.p`
+export const Title = styled.h2`
   font-size: 1.8em;
   margin: 0px 0px 43px;
   text-align: center;

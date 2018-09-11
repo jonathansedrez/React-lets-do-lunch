@@ -35,3 +35,21 @@ export const Close = styled.button`
   top: 5px;
   right: 5px;
 `
+const ButtonModal = styled.button`
+  width: 100px;
+  height: 30px;
+  border-radius: 22px;
+  background-color: #fff;
+  color: #3d3d3d;
+  border: 1px solid #3d3d3d;
+  cursor: pointer;
+  margin: 5px;
+`
+export const ButtonAccept = ButtonModal.extend`
+  outline: -3px solid green;
+  outline-offset: -10px;
+`
+export const ButtonReject = ButtonModal.extend`
+  outline: -3px solid red;
+  outline-offset: -10px;
+`

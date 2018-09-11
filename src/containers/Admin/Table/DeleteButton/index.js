@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import {Button, Wrapper} from './styled';
-import {Close, Modal} from '../../../../components/Modal';
+import {Button, Wrapper, ButtonAccept, ButtonReject} from './styled';
+import {Close, Modal, Title} from '../../../../components/Modal';
 import api from '../../../../api';
 import Overlay from '../../../../components/Overlay';
 
@@ -45,10 +45,10 @@ class DeleteButton extends Component {
         <Button onClick={this.handleClick}/>
         {isVisible && <Overlay />}
         <Modal isVisible={isVisible}>
-          <Close onClick={this.togglePage} type="button">X</Close>
-          <h3>Remover restaurante?</h3>
-          <button onClick={this.handleSubmit}>Sim</button>
-          <button onClick={this.togglePage}>Não</button>
+          <Close onClick={this.togglePage} type="button" />
+          <Title>Remover restaurante?</Title>
+          <ButtonAccept onClick={this.handleSubmit}>Sim</ButtonAccept>
+          <ButtonReject autoFocus onClick={this.togglePage}>Não</ButtonReject>
         </Modal>
       </Wrapper>      
     );

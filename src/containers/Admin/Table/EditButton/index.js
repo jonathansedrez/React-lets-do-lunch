@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {Button, Wrapper} from './styled';
-import {Close, Modal, Error, InputName, Input} from '../../../../components/Modal';
+import {Close, Modal, Error, InputName, InputSubmit, Input, Title} from '../../../../components/Modal';
 import Overlay from '../../../../components/Overlay';
 import api from '../../../../api';
 
@@ -70,19 +70,18 @@ class EditButton extends Component {
 
   render() { 
     const {isEnabled, isVisible, rest} = this.state
-    console.log(!isEnabled)
     return (
       <Wrapper>
         <Button onClick={this.handleClick}/>
         {isVisible && <Overlay />}
         <Modal onSubmit={this.handleSubmit} isVisible={isVisible}>
-          <Close onClick={this.togglePage} type="button">x</Close>
-          <h3>Editar restaurante</h3>
+          <Close onClick={this.togglePage} type="button" />
+          <Title>Editar restaurante</Title>
           <InputName type="text" value={rest.name} name="name" onChange={this.handleChange} error={isEnabled}/>
           {!isEnabled && <Error>Nome não pode ficar vazio</Error>}
           <Input type="text" value={rest.amount} name="amount" onChange={this.handleChange}/>
           <Input type="text" value={rest.address} name="address" onChange={this.handleChange}/>
-          <Input type="submit" value="Editar" disabled={!isEnabled}/>
+          <InputSubmit type="submit" value="Editar" disabled={!isEnabled}/>
         </Modal> 
       </Wrapper>
     )
