@@ -7,13 +7,13 @@ const spin = keyframes`
 
 const LoadingSpinner = styled.div`
   position: relative;
-  top: calc(100% - 35px);
-  left: calc(100% - 35px);
-  border: 16px solid #f3f3f3;
+  top: calc(50% - 35px);
+  left: calc(50% - 35px);
+  border: 5px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
+  border-top: 5px solid #3498db;
   width: 70px;
   height: 70px;
-  animation: spin 2s linear infinite;
+  animation: ${spin} 2s linear infinite;
 `
 export default LoadingSpinner
