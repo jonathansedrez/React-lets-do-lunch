@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  font-size: 1.6em;
-  width: 120px;
+  margin-bottom: 30px;
+  width: 200px;
+  max-width: 500px;
   height: 50px;
-  border-radius: 32px;
-  border: 1px solid #3d3d3d;
-  margin-left: 5%;
-  margin-bottom: 22px;
-  cursor: pointer;
+  border: 1px solid #eb523b;
   background-color: #fff;
+  font-size: 1.6em;
+  outline: none;
+  cursor: pointer;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
 `
 export default Button

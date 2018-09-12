@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import {Button, Wrapper, ButtonAccept, ButtonReject} from './styled';
-import {Close, Modal, Title} from '../../../../components/Modal';
+import {Button, Wrapper, ButtonModal, Title} from './styled';
+import {Close, Modal} from '../../../../components/Modal';
 import api from '../../../../api';
 import Overlay from '../../../../components/Overlay';
 
@@ -22,8 +22,10 @@ class DeleteButton extends Component {
     this.setState({isVisible: visible})
   }
 
-  handleSubmit = async () => {
-    const {restaurant} = this.state  
+  handleSubmit = async e => {
+    e.preventDefault()
+    const {restaurant} = this.state
+    console.log(restaurant)
     try {
       await api.removeRestaurant(restaurant).then( res => {
         alert('sucesso')
@@ -37,7 +39,6 @@ class DeleteButton extends Component {
     window.location.reload()
   }
 
-
   render() { 
     const {isVisible} = this.state;
     return (
@@ -47,8 +48,8 @@ class DeleteButton extends Component {
         <Modal isVisible={isVisible}>
           <Close onClick={this.togglePage} type="button" />
           <Title>Remover restaurante?</Title>
-          <ButtonAccept onClick={this.handleSubmit}>Sim</ButtonAccept>
-          <ButtonReject autoFocus onClick={this.togglePage}>Não</ButtonReject>
+          <ButtonModal onClick={this.handleSubmit}>Sim</ButtonModal>
+          <ButtonModal autoFocus onClick={this.togglePage}>Não</ButtonModal>
         </Modal>
       </Wrapper>      
     );

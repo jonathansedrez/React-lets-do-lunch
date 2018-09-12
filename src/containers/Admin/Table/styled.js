@@ -4,6 +4,7 @@ export const TableRest = styled.table`
   margin: 0 auto;
   border-collapse: separate;
   border-spacing: 5px;
+  margin-bottom:50px;
 `
 
 export const Td = styled.td`

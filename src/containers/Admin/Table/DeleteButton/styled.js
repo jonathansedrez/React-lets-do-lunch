@@ -35,7 +35,7 @@ export const Close = styled.button`
   top: 5px;
   right: 5px;
 `
-const ButtonModal = styled.button`
+export const ButtonModal = styled.button`
   width: 100px;
   height: 30px;
   border-radius: 22px;
@@ -45,11 +45,7 @@ const ButtonModal = styled.button`
   cursor: pointer;
   margin: 5px;
 `
-export const ButtonAccept = ButtonModal.extend`
-  outline: -3px solid green;
-  outline-offset: -10px;
-`
-export const ButtonReject = ButtonModal.extend`
-  outline: -3px solid red;
-  outline-offset: -10px;
+export const Title = styled.h3`
+  font-weight: 100;
+  font-size: 1.5em;
 `

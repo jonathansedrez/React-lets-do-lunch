@@ -4,7 +4,7 @@ import adminImage from '../../icons/admin.svg'
 import homeImage from '../../icons/home.svg'
 
 export const Menu = styled.nav`
-  background-color: #e5e5e5;
+  background-color: #fff;
   height: 72px;
   width: 100%;
   border-bottom: 1px solid #d3d3d3;
@@ -32,9 +32,9 @@ export const Home = MenuLink.extend`
     margin-right: 4px;
     content: '';
     background: url(${homeImage}) no-repeat;
+    background-size: cover;
     width: 22px;
     height: 22px;
-    background-size: cover;
     cursor: pointer;
   }
 `

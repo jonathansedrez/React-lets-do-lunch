@@ -64,22 +64,20 @@ export const InputSubmit = Input.extend`
 `
 
 export const Close = styled.button`
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    width: 30px;
-    height: 30px;
-    border-radius: 22px;
-    border: 1px solid #3d3d3d;
-    background: transparent;
-    color: #3d3d3d;
-    cursor: pointer;
-    font-size: 23px;
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  color: #3d3d3d;
+  cursor: pointer;
+  border: none;
+  font-weight: 900;
+  background-color: #FAFAFC;
 
   &:before{
-    width: 25px;
-    height: 25px;
-    content: 'x';
+    content: 'X';
+  }
+  &:hover {
+    color: grey;
   }
 `
 const fadeIn = keyframes`
